@@ -1,14 +1,18 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsYoutube, BsSearch } from "react-icons/bs";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 const SearchHeader = () => {
   const [text, setText] = useState("");
+  const { keyword } = useParams();
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     navigate(`/videos/${text}`);
   };
+  // 검색 시 검색 창에 keyword 유무 설정
+  useEffect(() => setText(keyword || ""), [keyword]);
+
   return (
     <header>
       <Link to="/">
