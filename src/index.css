@@ -9,6 +9,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #19181C;
+  color: #c6daf5;
+}
+
+#root {
+  width: 100vw;
+  @apply max-w-screen-2xl;
 }
 
 code {
