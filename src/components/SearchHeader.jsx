@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { BsYoutube, BsSearch } from "react-icons/bs";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SearchHeader = () => {
   const [text, setText] = useState("");
@@ -11,10 +11,10 @@ const SearchHeader = () => {
   };
   return (
     <header>
-      <div>
+      <Link to="/">
         <BsYoutube />
         <h1>Metube</h1>
-      </div>
+      </Link>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
